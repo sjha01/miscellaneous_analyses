@@ -1,0 +1,380 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14465,        372]
+NotebookOptionsPosition[     12720,        322]
+NotebookOutlinePosition[     13062,        337]
+CellTagsIndexPosition[     13019,        334]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Equations below from: \[OpenCurlyDoubleQuote]Validity of Fresnel and \
+Fraunhofer approximations in scalar diffraction\[CloseCurlyDoubleQuote] \
+(Mezouari and Harvey).\
+\>", "Subsection",
+ CellChangeTimes->{{3.785686094068714*^9, 
+  3.785686147374877*^9}},ExpressionUUID->"0e1ceacc-3f8f-4c5c-b4d9-\
+5bb001e97f1e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"E\[LetterSpace]fresnel", "=", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", 
+      FractionBox[
+       RowBox[{"2", "\[Pi]"}], "\[Lambda]"], " ", "z"}], "]"}], 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"Exp", "[", 
+       RowBox[{"I", " ", 
+        FractionBox[
+         RowBox[{"2", "\[Pi]"}], "\[Lambda]"], " ", 
+        FractionBox[
+         SuperscriptBox["a", "2"], 
+         RowBox[{"2", "z"}]]}], "]"}]}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Phi]\[LetterSpace]fresnel", "=", 
+   RowBox[{"Arg", "[", "E\[LetterSpace]fresnel", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[LetterSpace]fresnel", "=", 
+   RowBox[{"Abs", "[", "E\[LetterSpace]fresnel", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7856838401952524`*^9, 3.7856838793271675`*^9}, {
+   3.7856839659312363`*^9, 3.785683966259781*^9}, {3.7856840035791273`*^9, 
+   3.7856840084705358`*^9}, {3.785684331358651*^9, 3.7856843350472636`*^9}, 
+   3.7856850569509087`*^9},ExpressionUUID->"02a33d0a-ee34-45cf-a18c-\
+2ace0719253a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"E\[LetterSpace]rs", "=", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", 
+      FractionBox[
+       RowBox[{"2", "\[Pi]"}], "\[Lambda]"], " ", "z"}], "]"}], "-", 
+    RowBox[{"Exp", "[", 
+     RowBox[{"I", " ", 
+      FractionBox[
+       RowBox[{"2", "\[Pi]"}], "\[Lambda]"], " ", 
+      RowBox[{"Sqrt", "[", 
+       RowBox[{
+        SuperscriptBox["z", "2"], "+", 
+        SuperscriptBox["a", "2"]}], "]"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Phi]\[LetterSpace]rs", "=", 
+   RowBox[{"Arg", "[", "E\[LetterSpace]rs", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A\[LetterSpace]rs", "=", 
+   RowBox[{"Abs", "[", "E\[LetterSpace]rs", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.785683882359022*^9, 3.7856838841094255`*^9}, {
+   3.785683928787541*^9, 3.785683964759364*^9}, {3.7856840242922573`*^9, 
+   3.7856841062388487`*^9}, {3.785684341907987*^9, 3.785684346174257*^9}, 
+   3.7856850622799277`*^9},ExpressionUUID->"bdb34b60-09cc-492c-9411-\
+0a38a3e9a6a5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+On-axis phase and amplitude differences between RS result and Fresnel \
+approximation for single slit.
+Max z where there is a difference goes up with d, and down with \[Lambda]. It\
+\[CloseCurlyQuote]s never less than ~5\[Lambda] (case where d = \[Lambda]), \
+and with increasing d easily gets to hundreds of \[Lambda]. And this is all \
+right on the optical axis.
+So, can\[CloseCurlyQuote]t just brush aside need for RS in many situations.\
+\>", "Subsection",
+ CellChangeTimes->{{3.785685464401259*^9, 3.785685516254141*^9}, {
+  3.785685716110607*^9, 3.785685749255307*^9}, {3.785685805672061*^9, 
+  3.785685812266864*^9}, {3.7856858484929247`*^9, 3.7856858841245756`*^9}, {
+  3.785685925883052*^9, 3.7856859639023046`*^9}, {3.78568600745724*^9, 
+  3.78568606814191*^9}},ExpressionUUID->"f084c453-ee98-49f9-a7e3-\
+404190a82f52"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Lambda]\[LetterSpace]max", "=", "1"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7856853172864127`*^9, 3.7856853222093887`*^9}, 
+   3.785685399378518*^9, {3.785685559878763*^9, 3.7856856157007437`*^9}, 
+   3.785685892641713*^9},ExpressionUUID->"12684b61-cf76-4c42-8224-\
+5cbc9d615fca"],
+
+Cell[CellGroupData[{
+
+Cell["Lazy measure of phase difference.", "Subsubsection",
+ CellChangeTimes->{{3.785686176083335*^9, 
+  3.785686182975066*^9}},ExpressionUUID->"77b07fb2-8321-4d0b-bba6-\
+607ea5b70746"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{"\[Phi]\[LetterSpace]rs", "-", "\[Phi]\[LetterSpace]fresnel"}],
+        "]"}], "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"a", "\[Rule]", "d"}], ",", 
+        RowBox[{"\[Lambda]", "\[Rule]", "\[Lambda]\[LetterSpace]max"}]}], 
+       "}"}]}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", "0", ",", 
+       RowBox[{"100", "\[Lambda]\[LetterSpace]max"}]}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"2", "\[Pi]"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"d", ",", "\[Lambda]\[LetterSpace]max", ",", 
+     RowBox[{"10", "\[Lambda]\[LetterSpace]max"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.785684811697526*^9, 3.7856848186989975`*^9}, {
+  3.7856848596356454`*^9, 3.785684895282672*^9}, {3.785684970542158*^9, 
+  3.785684970839213*^9}, {3.7856852045054173`*^9, 3.785685221430097*^9}, {
+  3.785685289859462*^9, 3.785685347572549*^9}, {3.7856856697903657`*^9, 
+  3.7856856725564013`*^9}},ExpressionUUID->"539fd4e0-6bec-4267-9f55-\
+a20f7f88ed8d"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 10., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`d$$], 1, 10}}, Typeset`size$$ = {382., {22., 12.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`d$51743$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`d$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`d$$, $CellContext`d$51743$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        ReplaceAll[
+         Abs[$CellContext`\[Phi]\[LetterSpace]rs - $CellContext`\[Phi]\
+\[LetterSpace]fresnel], {$CellContext`a -> $CellContext`d$$, $CellContext`\
+\[Lambda] -> $CellContext`\[Lambda]\[LetterSpace]max}], {$CellContext`z, 0, 
+         100 $CellContext`\[Lambda]\[LetterSpace]max}, 
+        PlotRange -> {0, 2 Pi}], 
+      "Specifications" :> {{$CellContext`d$$, 1, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{433., {62., 68.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.785684868278092*^9, 3.7856848962672343`*^9}, 
+   3.7856849715735583`*^9, 3.7856852218519554`*^9, 3.7856853499636536`*^9, {
+   3.7856855618165503`*^9, 3.785685591696841*^9}, 3.785685673712784*^9, 
+   3.785685899721513*^9},ExpressionUUID->"1eb166fe-ae5d-4491-85b5-\
+f39f28f7af4f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Plot","plln",
+   "\"Limiting value \\!\\(\\*RowBox[{\\\"100\\\", \\\" \\\", \\\"\[Lambda]\
+\[LetterSpace]max\\\"}]\\) in \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"z\\\", \
+\\\",\\\", \\\"0\\\", \\\",\\\", RowBox[{\\\"100\\\", \\\" \\\", \
+\\\"\[Lambda]\[LetterSpace]max\\\"}]}], \\\"}\\\"}]\\) is not a machine-sized \
+real number.\"",2,1,1,30676949483465441927,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.7856951375725355`*^9},ExpressionUUID->"b8cfadfa-f98d-4156-ac72-\
+841e9161f121"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Lazy measure of amplitude difference.", "Subsubsection",
+ CellChangeTimes->{{3.7856861882257657`*^9, 
+  3.7856861958830853`*^9}},ExpressionUUID->"ab4dce58-90a3-4dc3-b410-\
+aa5bf6766599"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       FractionBox[
+        RowBox[{"Abs", "[", 
+         RowBox[{"A\[LetterSpace]rs", "-", "A\[LetterSpace]fresnel"}], "]"}], 
+        RowBox[{"Abs", "[", "A\[LetterSpace]rs", "]"}]], ")"}], "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"a", "\[Rule]", "d"}], ",", 
+        RowBox[{"\[Lambda]", "\[Rule]", "\[Lambda]\[LetterSpace]max"}]}], 
+       "}"}]}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", "0", ",", 
+       RowBox[{"100", "\[Lambda]\[LetterSpace]max"}]}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1.1"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"d", ",", "\[Lambda]\[LetterSpace]max", ",", 
+     RowBox[{"10", "\[Lambda]\[LetterSpace]max"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.785684811697526*^9, 3.7856848186989975`*^9}, {
+  3.7856848596356454`*^9, 3.785684895282672*^9}, {3.785684970542158*^9, 
+  3.785684970839213*^9}, {3.785685088691645*^9, 3.78568513077462*^9}, {
+  3.7856851704995136`*^9, 3.7856851886747074`*^9}, {3.785685362778504*^9, 
+  3.7856853817191772`*^9}, {3.7856856771196785`*^9, 
+  3.7856856793230886`*^9}},ExpressionUUID->"d6121161-15f1-4b46-8d19-\
+a4fafb5f880b"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 10., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`d$$], 1, 10}}, Typeset`size$$ = {384.2, {48., 22.65}},
+     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`d$53411$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`d$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`d$$, $CellContext`d$53411$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        ReplaceAll[
+        Abs[$CellContext`A\[LetterSpace]rs - \
+$CellContext`A\[LetterSpace]fresnel]/
+         Abs[$CellContext`A\[LetterSpace]rs], {$CellContext`a -> \
+$CellContext`d$$, $CellContext`\[Lambda] -> $CellContext`\[Lambda]\
+\[LetterSpace]max}], {$CellContext`z, 0, 
+         100 $CellContext`\[Lambda]\[LetterSpace]max}, PlotRange -> {0, 1.1}],
+       "Specifications" :> {{$CellContext`d$$, 1, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{436., {81., 87.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.7856851321322575`*^9, {3.785685181610731*^9, 3.7856851889873447`*^9}, 
+   3.7856853820789137`*^9, {3.785685605558691*^9, 3.7856856202798157`*^9}, 
+   3.7856856796514277`*^9, 
+   3.7856859090510883`*^9},ExpressionUUID->"0dbfe5f4-c1ea-4f09-a195-\
+2ad136acbac8"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Plot","plln",
+   "\"Limiting value \\!\\(\\*RowBox[{\\\"100\\\", \\\" \\\", \\\"\[Lambda]\
+\[LetterSpace]max\\\"}]\\) in \\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"z\\\", \
+\\\",\\\", \\\"0\\\", \\\",\\\", RowBox[{\\\"100\\\", \\\" \\\", \
+\\\"\[Lambda]\[LetterSpace]max\\\"}]}], \\\"}\\\"}]\\) is not a machine-sized \
+real number.\"",2,1,2,30676949483465441927,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.785695246036988*^9},ExpressionUUID->"d3105bf5-63c5-452d-86c2-\
+c0f6de221813"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{798, 810},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 323, 7, 79, "Subsection", "ExpressionUUID" -> \
+"0e1ceacc-3f8f-4c5c-b4d9-5bb001e97f1e"],
+Cell[906, 31, 1109, 29, 102, "Input", "ExpressionUUID" -> \
+"02a33d0a-ee34-45cf-a18c-2ace0719253a"],
+Cell[2018, 62, 1064, 28, 95, "Input", "ExpressionUUID" -> \
+"bdb34b60-09cc-492c-9411-0a38a3e9a6a5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3119, 95, 839, 14, 199, "Subsection", "ExpressionUUID" -> \
+"f084c453-ee98-49f9-a7e3-404190a82f52"],
+Cell[3961, 111, 319, 6, 30, "Input", "ExpressionUUID" -> \
+"12684b61-cf76-4c42-8224-5cbc9d615fca"],
+Cell[CellGroupData[{
+Cell[4305, 121, 184, 3, 39, "Subsubsection", "ExpressionUUID" -> \
+"77b07fb2-8321-4d0b-bba6-607ea5b70746"],
+Cell[CellGroupData[{
+Cell[4514, 128, 1210, 29, 50, "Input", "ExpressionUUID" -> \
+"539fd4e0-6bec-4267-9f55-a20f7f88ed8d"],
+Cell[5727, 159, 2124, 42, 147, "Output", "ExpressionUUID" -> \
+"1eb166fe-ae5d-4491-85b5-f39f28f7af4f"],
+Cell[7854, 203, 546, 11, 23, "Message", "ExpressionUUID" -> \
+"b8cfadfa-f98d-4156-ac72-841e9161f121"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8449, 220, 192, 3, 39, "Subsubsection", "ExpressionUUID" -> \
+"ab4dce58-90a3-4dc3-b410-aa5bf6766599"],
+Cell[CellGroupData[{
+Cell[8666, 227, 1327, 31, 89, "Input", "ExpressionUUID" -> \
+"d6121161-15f1-4b46-8d19-a4fafb5f880b"],
+Cell[9996, 260, 2137, 44, 185, "Output", "ExpressionUUID" -> \
+"0dbfe5f4-c1ea-4f09-a195-2ad136acbac8"],
+Cell[12136, 306, 544, 11, 23, "Message", "ExpressionUUID" -> \
+"d3105bf5-63c5-452d-86c2-c0f6de221813"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

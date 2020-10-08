@@ -1,0 +1,599 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19408,        589]
+NotebookOptionsPosition[     16249,        505]
+NotebookOutlinePosition[     16591,        520]
+CellTagsIndexPosition[     16548,        517]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Power use of average American", "Section",
+ CellChangeTimes->{{3.745019498950226*^9, 
+  3.745019503862275*^9}},ExpressionUUID->"6d5dad07-9de5-42af-97f3-\
+81ed5642dfb1"],
+
+Cell[TextData[{
+ "From Wikipedia, in 2006 the US total energy consumption was ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"29.2", " ", "PW", " ", "h"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9b80e93c-8e58-4ce0-9485-7f28678b7c3d"],
+ ". The US population in 2006 was ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"298.4", " ", 
+    SuperscriptBox["10", "6"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "84685739-4458-46c2-bac7-f2e9fa610744"],
+ ". So,"
+}], "Text",
+ CellChangeTimes->{{3.745019506186612*^9, 
+  3.745019574729987*^9}},ExpressionUUID->"082f7042-95a5-487a-8e07-\
+edb64d0c7dde"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"29.26", "PW", " ", "h"}], 
+   RowBox[{"1", "y"}]], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"3600", "s"}], 
+    RowBox[{"1", "h"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "y"}], 
+    RowBox[{"365.25", "d"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "d"}], 
+    RowBox[{"24", "h"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "h"}], 
+    RowBox[{"3600", "s"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["10", "12"], "kW"}], 
+    RowBox[{"1", "PW"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox["1", 
+    RowBox[{"298.4", " ", 
+     SuperscriptBox["10", "6"], "person"}]], ")"}]}]], "Input",
+ CellChangeTimes->{{3.7450190255804987`*^9, 3.7450191080382977`*^9}, {
+  3.7450195799236383`*^9, 
+  3.745019581233535*^9}},ExpressionUUID->"f495236c-915d-46c5-b8e6-\
+c861008b9049"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"11.18597995301124`", " ", "kW"}], "person"]], "Output",
+ CellChangeTimes->{
+  3.7450190528442698`*^9, {3.745019097199172*^9, 3.7450191084082575`*^9}, 
+   3.7450195820537615`*^9},ExpressionUUID->"b6544927-dacf-483d-8fa4-\
+1214f2b59cc8"]
+}, Open  ]],
+
+Cell[TextData[{
+ "So, about ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"11", "kW"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "78084822-e0f4-491c-98c5-2f763d5855eb"],
+ " is average person\[CloseCurlyQuote]s consumption, consistent with the ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"10", "kW"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "01e75871-54d3-46f1-bfc1-8870f14c704d"],
+ " round number that is usually used."
+}], "Text",
+ CellChangeTimes->{{3.745019593470187*^9, 
+  3.7450196533026466`*^9}},ExpressionUUID->"b2729797-1c64-43fe-90d0-\
+e8097b6eb7c6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Electricity usage of average American home", "Section",
+ CellChangeTimes->{{3.7450194134676504`*^9, 
+  3.745019419647134*^9}},ExpressionUUID->"95f2f5ae-70ed-4108-b07c-\
+b7d444ea12c8"],
+
+Cell["\<\
+Quick Googling, two random sites stated average in two numbers - one for a \
+year, and one for a month.\
+\>", "Text",
+ CellChangeTimes->{{3.745019425001912*^9, 
+  3.745019451195405*^9}},ExpressionUUID->"b267f476-e1e8-4ef9-bd62-\
+38853162eed3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"10766", "kW", " ", 
+    RowBox[{"h", "/", "home"}]}], 
+   RowBox[{"1", "y"}]], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"3600.", "s"}], 
+    RowBox[{"1", "h"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "y"}], 
+    RowBox[{"365.25", "d"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "d"}], 
+    RowBox[{"24", "h"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "h"}], 
+    RowBox[{"3600", "s"}]], ")"}]}]], "Input",
+ CellChangeTimes->{{3.7450187073646803`*^9, 3.745018776091493*^9}, 
+   3.745019383320305*^9, {3.745021502184758*^9, 
+   3.7450215046000776`*^9}},ExpressionUUID->"e16bd4c9-ba84-430c-97fb-\
+cead67a41031"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"1.2281542322610084`", " ", "kW"}], "home"]], "Output",
+ CellChangeTimes->{3.7450187768282046`*^9, 3.7450193836502633`*^9, 
+  3.7450215050200267`*^9},ExpressionUUID->"0e4d7ca0-db14-41a8-921a-\
+f8c1c50c0507"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"911", "kW", " ", 
+    RowBox[{"h", "/", "home"}]}], 
+   RowBox[{"1", "mo"}]], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"3600.", "s"}], 
+    RowBox[{"1", "h"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "mo"}], 
+    RowBox[{"30", "d"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "d"}], 
+    RowBox[{"24", "h"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "h"}], 
+    RowBox[{"3600", "s"}]], ")"}]}]], "Input",
+ CellChangeTimes->{{3.745019353678873*^9, 3.7450193797193637`*^9}, {
+  3.7450215092751684`*^9, 
+  3.7450215098180933`*^9}},ExpressionUUID->"59705ba3-aa18-4992-8809-\
+4b0a8ea40a51"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"1.2652777777777777`", " ", "kW"}], "home"]], "Output",
+ CellChangeTimes->{{3.745019367331996*^9, 3.7450193846988697`*^9}, 
+   3.7450215101680546`*^9},ExpressionUUID->"8526a3bf-9c7e-4387-b620-\
+2ef0c4209265"]
+}, Open  ]],
+
+Cell[TextData[{
+ "So, the two numbers are quite consistent. Figure ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1.25", "kW"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d77f6cdd-1bbc-4a83-8f40-0148816eb288"],
+ " is average American home\[CloseCurlyQuote]s electricity consumption, or ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "kW"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "29e74f0b-f64e-443a-9707-2c764d822f50"],
+ " if you want to use very round numbers. Note that this is purely \
+residential electricity. It does not include residential non-electric \
+heating, or commercial anything, or transportation, etc.\n\nWhat percentage \
+of US power consumption is this? Above, we have that ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"30", " ", "PW", " ", 
+    StyleBox["h",
+     FontSlant->"Plain"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d3cb55b8-4ab2-4462-b718-9ec535f3b603"],
+ " for total annual US energy consumption. There are about (see below) ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"125", " ", 
+    SuperscriptBox["10", "6"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "af78da69-e58b-43c5-862b-5ca330b27545"],
+ " homes in the US."
+}], "Text",
+ CellChangeTimes->{{3.745019455058436*^9, 3.745019494155383*^9}, {
+  3.745019607606166*^9, 3.7450196137662387`*^9}, {3.745020389731698*^9, 
+  3.7450204418061457`*^9}, {3.7450214293055677`*^9, 3.7450214935947704`*^9}, {
+  3.7450215240888524`*^9, 
+  3.745021524555317*^9}},ExpressionUUID->"5c3eb8ba-756d-45bf-b9f8-\
+90479301c4da"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"1.25", "kW"}], "home"], 
+  RowBox[{"(", 
+   RowBox[{"125", " ", 
+    SuperscriptBox["10", "6"], "home"}], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"1", "PW"}], 
+    RowBox[{
+     SuperscriptBox["10", "12"], "kW"}]], ")"}], "1", "y", 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"365.25", "d"}], 
+    RowBox[{"1", "y"}]], ")"}], 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"24", "h"}], 
+    RowBox[{"1", "d"}]], ")"}]}]], "Input",
+ CellChangeTimes->{{3.745021531602873*^9, 
+  3.7450216383327065`*^9}},ExpressionUUID->"0d24bd15-67f6-4583-9933-\
+8077da453871"],
+
+Cell[BoxData[
+ RowBox[{"1.3696875`", " ", "h", " ", "PW"}]], "Output",
+ CellChangeTimes->{3.7450215610849676`*^9, 3.745021596095744*^9, 
+  3.74502163870163*^9},ExpressionUUID->"fa7c040a-bd57-4f41-97bc-1a8bdcd2f9ef"]
+}, Open  ]],
+
+Cell["\<\
+Dividing by 20 PW h, we have that US residential electricity accounts for a \
+little under 5% of total US power consumption.\
+\>", "Text",
+ CellChangeTimes->{{3.7450216828236647`*^9, 
+  3.7450217624265676`*^9}},ExpressionUUID->"80f39da7-a053-418e-afa2-\
+72092ef4ba24"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solar powered home", "Section",
+ CellChangeTimes->{{3.7450196820233307`*^9, 
+  3.7450196843064795`*^9}},ExpressionUUID->"18f74c77-4a13-44f4-afbc-\
+8eedc3be6ddb"],
+
+Cell[TextData[{
+ "Ignoring heating, i.e., let\[CloseCurlyQuote]s say we wanted all \
+electricity in a typical home to come from solar power. That is, we need some \
+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "kW"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3d6ec3e0-81a3-4991-9822-f1af84b96d95"],
+ " from solar power. Assume we have the batteries to distribute the power \
+throughout the day. Most days, about ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"5", 
+    StyleBox["h",
+     FontSlant->"Plain"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "66d3fa9e-dd06-4872-bc1d-9ee2012cc8f3"],
+ " can be said to be giving solar power. Solar power flux at ground is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", 
+    RowBox[{"kW", " ", "/", 
+     SuperscriptBox[
+      StyleBox["m",
+       FontSlant->"Plain"], "2"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b37d98b0-7742-4fcf-bea8-8aa298d1d274"],
+ ". And let\[CloseCurlyQuote]s say the efficiency of our panels is some ",
+ Cell[BoxData[
+  FormBox["0.2", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cbd303d7-7a7d-429a-8b86-fe43e5104e90"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7450196882537622`*^9, 3.7450198527396293`*^9}, {
+  3.7450198853084803`*^9, 
+  3.7450199773068657`*^9}},ExpressionUUID->"bd62ab82-f30b-434e-ad9e-\
+d308e659fb4d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"1", 
+   RowBox[{"kW", " ", "/", "home"}], " ", "needed"}], 
+  RowBox[{
+   RowBox[{"(", 
+    FractionBox[
+     RowBox[{"1", "kW"}], 
+     RowBox[{"1", 
+      SuperscriptBox["m", "2"]}]], ")"}], 
+   RowBox[{"(", "0.2", ")"}], 
+   RowBox[{"(", 
+    FractionBox[
+     RowBox[{"5", "h"}], 
+     RowBox[{"24", "h"}]], ")"}]}]]], "Input",
+ CellChangeTimes->{{3.745019981374303*^9, 3.7450200681245694`*^9}, {
+  3.745020642397378*^9, 
+  3.7450206458455997`*^9}},ExpressionUUID->"b45f3a0c-6a96-4171-b574-\
+2b5f190f46a5"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"23.999999999999996`", " ", 
+   SuperscriptBox["m", "2"], " ", "needed"}], "home"]], "Output",
+ CellChangeTimes->{
+  3.745020017139818*^9, {3.7450200589282227`*^9, 3.745020068529498*^9}, 
+   3.7450206464618692`*^9},ExpressionUUID->"0c29d676-546b-4d3f-8946-\
+b973822391f0"]
+}, Open  ]],
+
+Cell[TextData[{
+ "So an average home needs some ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"25", 
+    SuperscriptBox[
+     StyleBox["m",
+      FontSlant->"Plain"], "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "750379dc-ad67-4b90-b958-fc7cc675801f"],
+ " of solar panels if it is to meet its entire electricity needs.\n\nA \
+follow-up: What area of solar panels would it take to cover entire US \
+residential electricity demand? Well first, how many occupied homes are there \
+in the US? From Statista, there were some ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"125", " ", 
+    SuperscriptBox["10", "6"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c2daad1d-3f88-432c-b2b8-2e28798fe4b5"],
+ " households in the US in 2016. So, we have"
+}], "Text",
+ CellChangeTimes->{{3.745020370449237*^9, 3.7450203763659377`*^9}, {
+  3.745020447203264*^9, 3.7450205427251186`*^9}, {3.7450205876012*^9, 
+  3.7450206259107575`*^9}, {3.745022033213654*^9, 
+  3.7450220448833227`*^9}},ExpressionUUID->"6fea932c-0668-409a-ae56-\
+c605f1f09dfe"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"25.", 
+    SuperscriptBox["m", "2"], "needed"}], 
+   RowBox[{"1", "home"}]], 
+  RowBox[{"(", 
+   RowBox[{"125", " ", 
+    SuperscriptBox["10", "6"], "home"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.74502065521482*^9, 
+  3.7450206770299416`*^9}},ExpressionUUID->"2932cb97-4ca0-48e6-97ff-\
+9f9ad4fe65e9"],
+
+Cell[BoxData[
+ RowBox[{"3.125`*^9", " ", 
+  SuperscriptBox["m", "2"], " ", "needed"}]], "Output",
+ CellChangeTimes->{
+  3.7450206790782356`*^9},ExpressionUUID->"9a2fd2b1-40df-4e40-8de6-\
+7319ccc7cb73"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Some 3 billion ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    StyleBox["m",
+     FontSlant->"Plain"], "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "af71c5f4-03d2-4258-afbc-31a39b1dd3b9"],
+ " of solar panel needed. How do we get a handle on this number? Let\
+\[CloseCurlyQuote]s look at it in two ways...\n\n1 .cost, and compared to a \
+more familiar area. The cost (from a Quora thing) is about ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"100", " ", 
+    RowBox[{"dollar", "/", 
+     SuperscriptBox[
+      StyleBox["m",
+       FontSlant->"Plain"], "2"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "78cfac3e-f606-4648-aa62-8853cbe1968b"],
+ ".So,"
+}], "Text",
+ CellChangeTimes->{{3.7450206893520746`*^9, 3.7450207320749063`*^9}, {
+  3.7450208831771603`*^9, 3.74502090867052*^9}, {3.7450210340532146`*^9, 
+  3.7450210470995255`*^9}, {3.7450220532432323`*^9, 
+  3.745022058441886*^9}},ExpressionUUID->"ef42a69f-a07b-41f4-afc1-\
+4deab60144c4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"3.", " ", 
+  SuperscriptBox["10", "9"], 
+  SuperscriptBox["m", "2"], " ", "needed", 
+  RowBox[{"(", 
+   FractionBox[
+    RowBox[{"100", "dollar"}], 
+    SuperscriptBox["m", "2"]], ")"}]}]], "Input",
+ CellChangeTimes->{{3.745020912624007*^9, 3.7450209359061575`*^9}, {
+  3.745021052802843*^9, 
+  3.7450210531928062`*^9}},ExpressionUUID->"ebbc1485-f712-4bdb-a720-\
+d8e6b3a7c07b"],
+
+Cell[BoxData[
+ RowBox[{"3.`*^11", " ", "dollar", " ", "needed"}]], "Output",
+ CellChangeTimes->{{3.7450209309662743`*^9, 3.7450209362160974`*^9}, 
+   3.745021053483964*^9},ExpressionUUID->"58614c5a-94cc-4e59-baf3-\
+e8ed8d66c861"]
+}, Open  ]],
+
+Cell[TextData[{
+ "So, we\[CloseCurlyQuote]re at 300 billion dollars, for the panels \
+themselves. This is before installation costs, and ignores storage costs. It \
+is also for residential electricity only, which accounts for a little under \
+5% of US power consumption. So, we have that it would cost $300 billion to \
+produce the solar panels that would enable us to make 5% of our power \
+consumption solar. It would cost much more to actually install the panels, \
+and much more to ensure that we have the necessary storage schemes to make \
+them useful throughout the day. It would also take a lot of energy to produce \
+the panels themselves.\n\n2. Area. Some Googling gives an old number (2001) \
+of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"61000", 
+    SuperscriptBox["mi", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f40348be-e7ea-4001-8d28-36e86392b444"],
+ " in the US for driving and parking. This is the same as about ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1.6", " ", 
+    SuperscriptBox["10", "11"], 
+    SuperscriptBox[
+     StyleBox["m",
+      FontSlant->"Plain"], "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "cc561b5d-dc93-4645-91a0-30dde7a84a43"],
+ ". So, we\[CloseCurlyQuote]d need about 2% of the area covered in road to \
+now be devoted to solar panels (before including necessary area for battery \
+storage, etc.) to accomplish our goal."
+}], "Text",
+ CellChangeTimes->{{3.745020949535101*^9, 3.745020965197446*^9}, {
+  3.7450210598705378`*^9, 3.745021067378965*^9}, {3.74502110553489*^9, 
+  3.7450211156766343`*^9}, {3.7450211534299345`*^9, 3.74502118811893*^9}, {
+  3.745021302942841*^9, 3.7450213771756573`*^9}, {3.7450217980512285`*^9, 
+  3.7450219121992493`*^9}, {3.7450220608610377`*^9, 3.74502206614085*^9}, {
+  3.7450221050667963`*^9, 
+  3.74502229197353*^9}},ExpressionUUID->"e96168eb-94fc-4380-bf44-\
+dc49a1285ee1"]
+}, Open  ]]
+},
+WindowSize->{798, 810},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 174, 3, 70, "Section", "ExpressionUUID" -> \
+"6d5dad07-9de5-42af-97f3-81ed5642dfb1"],
+Cell[757, 27, 639, 18, 51, "Text", "ExpressionUUID" -> \
+"082f7042-95a5-487a-8e07-edb64d0c7dde"],
+Cell[CellGroupData[{
+Cell[1421, 49, 904, 33, 61, "Input", "ExpressionUUID" -> \
+"f495236c-915d-46c5-b8e6-c861008b9049"],
+Cell[2328, 84, 274, 6, 57, "Output", "ExpressionUUID" -> \
+"b6544927-dacf-483d-8fa4-1214f2b59cc8"]
+}, Open  ]],
+Cell[2617, 93, 609, 17, 49, "Text", "ExpressionUUID" -> \
+"b2729797-1c64-43fe-90d0-e8097b6eb7c6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3263, 115, 189, 3, 70, "Section", "ExpressionUUID" -> \
+"95f2f5ae-70ed-4108-b07c-b7d444ea12c8"],
+Cell[3455, 120, 253, 6, 30, "Text", "ExpressionUUID" -> \
+"b267f476-e1e8-4ef9-bd62-38853162eed3"],
+Cell[CellGroupData[{
+Cell[3733, 130, 717, 25, 57, "Input", "ExpressionUUID" -> \
+"e16bd4c9-ba84-430c-97fb-cead67a41031"],
+Cell[4453, 157, 245, 5, 54, "Output", "ExpressionUUID" -> \
+"0e4d7ca0-db14-41a8-921a-f8c1c50c0507"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4735, 167, 691, 25, 55, "Input", "ExpressionUUID" -> \
+"59705ba3-aa18-4992-8809-4b0a8ea40a51"],
+Cell[5429, 194, 246, 5, 54, "Output", "ExpressionUUID" -> \
+"8526a3bf-9c7e-4387-b620-2ef0c4209265"]
+}, Open  ]],
+Cell[5690, 202, 1594, 38, 127, "Text", "ExpressionUUID" -> \
+"5c3eb8ba-756d-45bf-b9f8-90479301c4da"],
+Cell[CellGroupData[{
+Cell[7309, 244, 620, 22, 57, "Input", "ExpressionUUID" -> \
+"0d24bd15-67f6-4583-9933-8077da453871"],
+Cell[7932, 268, 215, 3, 30, "Output", "ExpressionUUID" -> \
+"fa7c040a-bd57-4f41-97bc-1a8bdcd2f9ef"]
+}, Open  ]],
+Cell[8162, 274, 278, 6, 49, "Text", "ExpressionUUID" -> \
+"80f39da7-a053-418e-afa2-72092ef4ba24"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8477, 285, 167, 3, 70, "Section", "ExpressionUUID" -> \
+"18f74c77-4a13-44f4-afbc-8eedc3be6ddb"],
+Cell[8647, 290, 1398, 38, 93, "Text", "ExpressionUUID" -> \
+"bd62ab82-f30b-434e-ad9e-d308e659fb4d"],
+Cell[CellGroupData[{
+Cell[10070, 332, 549, 18, 70, "Input", "ExpressionUUID" -> \
+"b45f3a0c-6a96-4171-b574-2b5f190f46a5"],
+Cell[10622, 352, 310, 7, 56, "Output", "ExpressionUUID" -> \
+"0c29d676-546b-4d3f-8946-b973822391f0"]
+}, Open  ]],
+Cell[10947, 362, 1077, 26, 110, "Text", "ExpressionUUID" -> \
+"6fea932c-0668-409a-ae56-c605f1f09dfe"],
+Cell[CellGroupData[{
+Cell[12049, 392, 355, 11, 57, "Input", "ExpressionUUID" -> \
+"2932cb97-4ca0-48e6-97ff-9f9ad4fe65e9"],
+Cell[12407, 405, 201, 5, 30, "Output", "ExpressionUUID" -> \
+"9a2fd2b1-40df-4e40-8de6-7319ccc7cb73"]
+}, Open  ]],
+Cell[12623, 413, 1020, 27, 95, "Text", "ExpressionUUID" -> \
+"ef42a69f-a07b-41f4-afc1-4deab60144c4"],
+Cell[CellGroupData[{
+Cell[13668, 444, 401, 11, 56, "Input", "ExpressionUUID" -> \
+"ebbc1485-f712-4bdb-a720-d8e6b3a7c07b"],
+Cell[14072, 457, 229, 4, 30, "Output", "ExpressionUUID" -> \
+"58614c5a-94cc-4e59-baf3-e8ed8d66c861"]
+}, Open  ]],
+Cell[14316, 464, 1917, 38, 205, "Text", "ExpressionUUID" -> \
+"e96168eb-94fc-4380-bf44-dc49a1285ee1"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

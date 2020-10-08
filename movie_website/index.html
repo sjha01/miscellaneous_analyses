@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<html>
+  <head>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="RadarChart.js"></script>
+    <link rel='stylesheet' href='style.css'>
+  </head>
+  <body>
+  
+    <!-- Dropdown menu -->
+    
+    <!-- Initialize select buttons -->
+    <table>
+      <tr>
+        <td>x-axis</td>
+        <td><select id="selectButton_x"></select></td>
+      </tr>
+      <tr>
+        <td>y-axis</td>
+        <td><select id="selectButton_y"></select></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+        <div id="scatter_plot_1"></div>
+        </td>
+        <td>
+        <div id="radial_line_1"></div>
+        </td>
+      </tr>
+    </table>
+    
+    <!-- Scatter plot -->
+    <script type='text/javascript' src='script.js'></script>
+    <!-- End scatter plot -->
+  </body>
+</html>
