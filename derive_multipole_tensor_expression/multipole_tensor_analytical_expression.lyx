@@ -1,0 +1,2394 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{relsize}
+\usepackage{graphicx}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.5in
+\topmargin 1in
+\rightmargin 0.5in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\series bold
+Spencer Alexander
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2.5mm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Multipole tensors - Analytic expression for multipole tensors of arbitrary
+ order based on pattern recognition derivation
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2.5mm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Notations used:
+\end_layout
+
+\begin_layout Enumerate
+Three-dimensional Cartesian indices are represented as 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+.
+ For instance, 
+\begin_inset Formula $r_{a_{1}}$
+\end_inset
+
+ can represent 
+\begin_inset Formula $r_{x}$
+\end_inset
+
+, 
+\begin_inset Formula $r_{y}$
+\end_inset
+
+, or 
+\begin_inset Formula $r_{z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Summations are implied over repeated lower indices.
+ For instance, 
+\begin_inset Formula $R_{a_{1}}r_{a_{1}}=R_{x}r_{x}+R_{y}r_{y}+R_{z}r_{z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\int_{V}\left(\cdots\right)dv\coloneqq\int_{\mathrm{all\: space}}\left(\cdots\right)dxdydz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2.5mm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Vocabulary used:
+\series default
+ In what follows, I will define tensors and contants 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+, 
+\begin_inset Formula $q^{\left(l\right)}$
+\end_inset
+
+, 
+\begin_inset Formula $J^{i\left(l\right)}$
+\end_inset
+
+, 
+\begin_inset Formula $m^{\left(l\right)}$
+\end_inset
+
+, and 
+\begin_inset Formula $d^{\left(l\right)}$
+\end_inset
+
+.
+ People refer to both 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+ and 
+\begin_inset Formula $q^{\left(l\right)}$
+\end_inset
+
+ (or 
+\begin_inset Formula $J^{i\left(l\right)}$
+\end_inset
+
+) as multipole tensors, or multipole moments.
+ For example, if someone mentions the electrostatic dipole moment, then
+ depending on context they may be referring to 
+\begin_inset Formula $\rho^{\left(1\right)}=\bm{e}_{a_{1}}\int_{V}r_{a_{1}}\rho\left(\bm{r}\right)dv$
+\end_inset
+
+ or 
+\begin_inset Formula $T^{\left(1\right)}=\bm{e}_{a_{1}}R_{a_{1}}$
+\end_inset
+
+.
+ Furthermore, in most contexts, 
+\begin_inset Formula $J^{i\left(l\right)}$
+\end_inset
+
+ is not used directly - instead, 
+\begin_inset Formula $m^{\left(l\right)}$
+\end_inset
+
+ is used, where e.g.,
+\begin_inset Formula 
+\begin{eqnarray}
+\bm{m} & = & m^{\left(1\right)}\nonumber \\
+ & = & \frac{1}{2}\int_{V}\bm{r}\times\bm{J}dv.\label{eq:1}
+\end{eqnarray}
+
+\end_inset
+
+As with 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+ and 
+\begin_inset Formula $J^{i\left(l\right)}$
+\end_inset
+
+, people refer to 
+\begin_inset Formula $m^{\left(l\right)}$
+\end_inset
+
+ is as multipole tensors or multipole moments.
+ Note that the 
+\begin_inset Formula $m^{\left(l\right)}$
+\end_inset
+
+'s are defined such that there is always a single tensor at order 
+\begin_inset Formula $l$
+\end_inset
+
+, as opposed to three 
+\begin_inset Formula $J^{i\left(l\right)}$
+\end_inset
+
+ tensors at the same order.
+\end_layout
+
+\begin_layout Standard
+On this page, multipole tensor refers to either 
+\begin_inset Formula $q^{\left(l\right)}$
+\end_inset
+
+ or 
+\begin_inset Formula $J^{i\left(l\right)}$
+\end_inset
+
+, prefactor tensor refers to 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+, and denominator constant refers to 
+\begin_inset Formula $d^{\left(l\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2.5mm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Multipole expansion (Cartesian tensor formalism), and the main result of
+ this webpage:
+\series default
+ The electric potential 
+\begin_inset Formula $\Phi\left(\bm{R}\right)$
+\end_inset
+
+ can be written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\Phi\left(\bm{R}\right) & = & \frac{1}{4\pi\varepsilon_{0}}\left[\frac{\int_{V}\rho\left(\bm{r}\right)dv}{R}+\frac{R_{a_{1}}\int_{V}r_{a_{1}}\rho\left(\bm{r}\right)dv}{R^{3}}+\frac{\left(3R_{a_{1}}R_{a_{2}}-R^{2}\delta_{a_{1}a_{2}}\right)\int_{V}r_{a_{1}}r_{a_{2}}\rho\left(\bm{r}\right)dv}{2R^{5}}+\ldots\right]\nonumber \\
+ & = & \frac{1}{4\pi\varepsilon_{0}}\sum_{l=0}\frac{T^{\left(l\right)}q^{\left(l\right)}}{d^{\left(l\right)}R^{2l+1}},\label{eq:2}
+\end{eqnarray}
+
+\end_inset
+
+and similarly the components of the magnetic vector potential 
+\begin_inset Formula $\bm{A}\left(\bm{R}\right)$
+\end_inset
+
+ can be written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A^{i}\left(\bm{R}\right)=\frac{\mu_{0}}{4\pi}\sum_{l=0}\frac{T^{\left(l\right)}J^{i\left(l\right)}}{d^{\left(l\right)}R^{2l+1}},\label{eq:3}
+\end{equation}
+
+\end_inset
+
+where
+\begin_inset Formula 
+\begin{equation}
+q^{\left(l\right)}\coloneqq\int_{V}r_{a_{1}}\times\cdots\times r_{a_{l}}\rho\left(\bm{r}\right)dv,\label{eq:4}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+J^{i\left(l\right)}\coloneqq\int_{V}r_{a_{1}}\times\cdots\times r_{a_{l}}J^{i}\left(\bm{r}\right)dv,\label{eq:5}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+d^{\left(l\right)}\coloneqq\mathrm{constants\: in\: denominator\: of\:}l\mathrm{'th\: term}.\label{eq:6}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Some analytical expressions for the denominator constant are
+\begin_inset Formula 
+\begin{eqnarray}
+d^{\left(l\right)} & = & 2^{\sum_{n=1}^{\mathrm{floor}\left(\log_{2}l\right)}\mathrm{floor}\left(l/2^{n}\right)}\nonumber \\
+ & = & 2^{\sum_{n=1}^{\infty}\mathrm{floor}\left(l/2^{n}\right)}\nonumber \\
+ & = & \mathrm{gcd}\left(l!,2^{l}\right).\label{eq:7}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An analytical expression for the prefactor tensor is
+\begin_inset Formula 
+\begin{equation}
+T^{\left(l\right)}=\left(-1\right)^{l}\sum_{m=0}^{\mathrm{rd}\left(l/2\right)}d^{\left(l\right)}2^{l-2m}{-1/2 \choose l-m}{l-m \choose l-2m}R^{2m}\left(\prod_{\alpha=1}^{l-2m}R_{a_{\alpha}}\right)\left(\prod_{\beta=0}^{m-1}\delta_{a_{2\beta+l-2m+1}a_{2\beta+l-2m+2}}\right),\label{eq:8}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathrm{rd}\left(x\right)$
+\end_inset
+
+ rounds 
+\begin_inset Formula $x$
+\end_inset
+
+ to the nearest integer, and rounds down if 
+\begin_inset Formula $x$
+\end_inset
+
+ is a half-integer, and where Euler products are 
+\begin_inset Formula $1$
+\end_inset
+
+ if the starting value is greater than the upper limit:
+\begin_inset Formula 
+\begin{equation}
+\mathrm{rd}\left(x\right)\coloneqq\begin{cases}
+\mathrm{round}\left(x\right), & x\neq n+\frac{1}{2},n\in\mathbb{Z}\\
+\mathrm{floor}\left(x\right), & x=n+\frac{1}{2},n\in\mathbb{Z}
+\end{cases}\quad,\quad\prod_{\gamma=\gamma_{0}}^{\gamma_{1}}x_{\beta}\coloneqq\begin{cases}
+\prod_{\gamma=\gamma_{0}}^{\gamma_{1}}x_{\beta}, & \gamma_{1}\geq\gamma_{0}\\
+1, & \gamma_{1}<\gamma_{0}
+\end{cases}.\label{eq:9}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that the above analytical expression for 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+ is not unique - it is only the tensor products 
+\begin_inset Formula $T^{\left(l\right)}q^{\left(l\right)}$
+\end_inset
+
+ and 
+\begin_inset Formula $T^{\left(l\right)}J^{i\left(l\right)}$
+\end_inset
+
+ that are important, and there is freedom in the definition of 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+ that leaves these products invariant.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{2.5mm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Derivation:
+\series default
+ What follows is half-derivation, half-pattern recognition.
+ I'm only going to write it for the electric case, it is identical for the
+ magnetic case.
+\end_layout
+
+\begin_layout Standard
+Start with
+\begin_inset Formula 
+\begin{eqnarray}
+\Phi\left(\bm{R}\right) & = & \frac{1}{4\pi\varepsilon_{0}}\int_{V}\frac{1}{\left|\bm{R}-\bm{r}\right|}\rho\left(\bm{r}\right)dv\nonumber \\
+ & = & \frac{1}{4\pi\varepsilon_{0}}\int_{V}\left[\left(\bm{R}-\bm{r}\right)^{2}\right]^{-1/2}\rho\left(\bm{r}\right)dv\nonumber \\
+ & = & \frac{1}{4\pi\varepsilon_{0}}\int_{V}\left[r^{2}-2\bm{R}\cdot\bm{r}+R^{2}\right]^{-1/2}\rho\left(\bm{r}\right)dv.\label{eq:10}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now apply the generalized binomial theorem,
+\begin_inset Formula 
+\begin{equation}
+\left(a+b\right)^{n}=\sum_{k=0}{n \choose k}a^{n-k}b^{k},\label{eq:11}
+\end{equation}
+
+\end_inset
+
+with
+\begin_inset Formula 
+\begin{equation}
+a=r^{2}-2\bm{R}\cdot\bm{r}\quad,\quad b=R^{2}\quad,\quad n=-1/2.\label{eq:12}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives
+\begin_inset Formula 
+\begin{eqnarray}
+\frac{1}{\left|\bm{R}-\bm{r}\right|} & = & \left[r^{2}-2\bm{R}\cdot\bm{r}+R^{2}\right]^{-1/2}\nonumber \\
+ & = & \frac{1}{R}+\frac{2\bm{R}\cdot\bm{r}-r^{2}}{2R^{3}}+\frac{3\left(-2\bm{R}\cdot\bm{r}+r^{2}\right)^{2}}{8R^{5}}+\ldots.\label{eq:13}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Multiply terms by extra factors of 
+\begin_inset Formula $R^{2}/R^{2}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\bm{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bm{r}$
+\end_inset
+
+ always show up multiplicatively in like powers.
+ E.g., take 
+\begin_inset Formula $-r^{2}/R^{3}\mapsto-r^{2}R^{2}/R^{5}$
+\end_inset
+
+, etc.
+ Then group terms so that they have like powers of 
+\begin_inset Formula $R$
+\end_inset
+
+ in the denominator, and multiply terms in a given numerator until no fractions
+ show up in the numerators.
+ This gives
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{\left|\bm{R}-\bm{r}\right|}=\frac{1}{R}+\frac{\bm{R}\cdot\bm{r}}{R^{3}}+\frac{3\left(\bm{R}\cdot\bm{r}\right)^{2}-R^{2}r^{2}}{2R^{5}}+\frac{5\left(\bm{R}\cdot\bm{r}\right)^{3}-3R^{2}\left(\bm{R}\cdot\bm{r}\right)r^{2}}{2R^{7}}+\ldots.\label{eq:14}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substitute this back into the expression for 
+\begin_inset Formula $\Phi\left(\bm{R}\right)$
+\end_inset
+
+ and rearrange slightly,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Phi\left(\bm{R}\right)=\frac{1}{4\pi\varepsilon_{0}}\left\{ \int_{V}\frac{1}{R}\rho\left(\bm{r}\right)dv+\int_{V}\frac{1}{R^{3}}\bm{R}\cdot\bm{r}\rho\left(\bm{r}\right)dv+\int_{V}\frac{1}{2R^{5}}\left[3\left(\bm{R}\cdot\bm{r}\right)^{2}-R^{2}r^{2}\right]\rho\left(\bm{r}\right)dv+\ldots\right\} .\label{eq:15}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Get the multipole moments 
+\begin_inset Formula $q^{\left(l\right)}$
+\end_inset
+
+ to show up explicitly by writing dot products between 
+\begin_inset Formula $\bm{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bm{r}$
+\end_inset
+
+ and between 
+\begin_inset Formula $\bm{r}$
+\end_inset
+
+ and itself using index convention, e.g.,
+\begin_inset Formula 
+\begin{equation}
+R^{2}\left(\bm{R}\cdot\bm{r}\right)r^{2}=R^{2}R_{a_{1}}r_{a_{1}}r_{a_{2}}r_{a_{2}}.\label{eq:16}
+\end{equation}
+
+\end_inset
+
+Then get all 
+\begin_inset Formula $r$
+\end_inset
+
+ indices in a given term to not repeat themselves using Kronecker deltas,
+ e.g.,
+\begin_inset Formula 
+\begin{equation}
+R^{2}R_{a_{1}}r_{a_{1}}r_{a_{2}}r_{a_{2}}=R^{2}R_{a_{1}}\delta_{a_{2}a_{3}}r_{a_{1}}r_{a_{2}}r_{a_{3}}.\label{eq:17}
+\end{equation}
+
+\end_inset
+
+Substituting,
+\begin_inset Formula 
+\begin{equation}
+\Phi\left(\bm{R}\right)=\frac{1}{4\pi\varepsilon_{0}}\left[\int_{V}\frac{1}{R}\rho\left(\bm{r}\right)dv+\int_{V}\frac{R_{a_{1}}}{R^{3}}r_{a_{1}}\rho\left(\bm{r}\right)dv+\int_{V}\frac{3R_{a_{1}}R_{a_{2}}-R^{2}\delta_{a_{1}a_{2}}}{2R^{5}}r_{a_{1}}r_{a_{2}}\rho\left(\bm{r}\right)dv+\ldots\right].\label{eq:18}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Move all terms not dependent on 
+\begin_inset Formula $\bm{r}$
+\end_inset
+
+ outside of the integrals,
+\begin_inset Formula 
+\begin{equation}
+\Phi\left(\bm{R}\right)=\frac{1}{4\pi\varepsilon_{0}}\left[\frac{1}{R}\int_{V}\rho\left(\bm{r}\right)dv+\frac{R_{a_{1}}}{R^{3}}\int_{V}r_{a_{1}}\rho\left(\bm{r}\right)dv+\frac{3R_{a_{1}}R_{a_{2}}-R^{2}\delta_{a_{1}a_{2}}}{2R^{5}}\int_{V}r_{a_{1}}r_{a_{2}}\rho\left(\bm{r}\right)dv+\ldots\right].\label{eq:19}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now identify the integrals with 
+\begin_inset Formula $q^{\left(l\right)}$
+\end_inset
+
+, the numerators outside of the integrals with 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+, the constants in the denominators outside of the integrals as 
+\begin_inset Formula $d^{\left(l\right)}$
+\end_inset
+
+, and the powers of 
+\begin_inset Formula $R$
+\end_inset
+
+ in the denominators as 
+\begin_inset Formula $R^{2l+1}$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{eqnarray}
+\Phi\left(\bm{R}\right) & = & \frac{1}{4\pi\varepsilon_{0}}\left[\frac{T^{\left(0\right)}q^{\left(0\right)}}{d^{\left(0\right)}R^{2\times0+1}}+\frac{T^{\left(1\right)}q^{\left(1\right)}}{d^{\left(1\right)}R^{2\times1+1}}+\frac{T^{\left(2\right)}q^{\left(2\right)}}{d^{\left(2\right)}R^{2\times2+1}}+\ldots\right]\nonumber \\
+ & = & \frac{1}{4\pi\varepsilon_{0}}\sum_{l=0}\frac{T^{\left(l\right)}q^{\left(l\right)}}{d^{\left(l\right)}R^{2l+1}}.\label{eq:20}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The above procedure was coded into the Mathematica document Multipole expansion.n
+b.
+ Using the procedure, any 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+ or 
+\begin_inset Formula $d^{\left(l\right)}$
+\end_inset
+
+ can be found algorithmically, but the procedure is not yet an analytical
+ expression for these (although we already have an analytical expression
+ for 
+\begin_inset Formula $q^{\left(l\right)}$
+\end_inset
+
+ by 
+\begin_inset Formula $q^{\left(l\right)}$
+\end_inset
+
+'s definition).
+ However, the procedure is handy for quickly exploring arbitrarily high-order
+ prefactor tensors and denominator constants and looking for patterns to
+ determine an analytical expression, and that's what I did.
+\end_layout
+
+\begin_layout Standard
+Let's start with the denominator constants.
+ The first several are:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="14">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $l$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $7$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $9$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $10$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $11$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $12$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d^{\left(l\right)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $16$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $16$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $128$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $128$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $256$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $256$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1024$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A handy tool for exploring nonobvious integer patterns like this is The
+ On-Line Encyclopedia of Integer Sequences, OEIS.
+ Throwing it in there, it is sequence number A060818, and a few expressions
+ for the sequence are given as
+\begin_inset Formula 
+\begin{eqnarray}
+d^{\left(l\right)} & = & 2^{\sum_{n=1}^{\infty}\mathrm{floor}\left(l/2^{n}\right)}\nonumber \\
+ & = & \gcd\left(l!,2^{l}\right)\nonumber \\
+ & = & \mathrm{denominator}\left({2l \choose l}/2^{l}\right).\label{eq:21}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first and last of these are also equivalent to
+\begin_inset Formula 
+\begin{eqnarray}
+d^{\left(l\right)} & = & 2^{\sum_{n=1}^{\mathrm{floor}\left(\log_{2}l\right)}\mathrm{floor}\left(l/2^{n}\right)}\nonumber \\
+ & = & \mathrm{denominator}\left(2^{l}{-1/2 \choose l}\right),\label{eq:22}
+\end{eqnarray}
+
+\end_inset
+
+since 
+\begin_inset Formula ${2l \choose l}/2^{l}=-2^{l}{-1/2 \choose l}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Great, now let's move onto the prefactor tensors.
+ Start by making a table of the first several:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $l$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-R_{a_{1}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3R_{a_{1}}R_{a_{2}}-3R^{2}R_{a_{1}}\delta_{a_{1}a_{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5R_{a_{1}}R_{a_{2}}R_{a_{3}}-3R^{2}R_{a_{1}}\delta_{a_{2}a_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $35R_{a_{1}}R_{a_{2}}R_{a_{3}}R_{a_{4}}-30R^{2}R_{a_{1}}R_{a_{2}}\delta_{a_{3}a_{4}}+3R^{4}\delta_{a_{1}a_{2}}\delta_{a_{3}a_{4}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $63R_{a_{1}}R_{a_{2}}R_{a_{3}}R_{a_{4}}R_{a_{5}}-70R^{2}R_{a_{1}}R_{a_{2}}R_{a_{3}}\delta_{a_{4}a_{5}}+15R^{4}R_{a_{1}}\delta_{a_{2}a_{3}}\delta_{a_{4}a_{5}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In general, we can write each 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+ as
+\begin_inset Formula 
+\begin{equation}
+T^{\left(l\right)}=\sum_{m=1}^{\mathrm{upper\: limit}}\kappa_{m}\lambda_{m},\label{eq:23}
+\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula $\kappa_{m}$
+\end_inset
+
+ representing the constants, and 
+\begin_inset Formula $\lambda_{m}$
+\end_inset
+
+ representing everything with 
+\begin_inset Formula $R$
+\end_inset
+
+'s and 
+\begin_inset Formula $\delta$
+\end_inset
+
+'s.
+ First, what is 
+\begin_inset Formula $\mathrm{upper\: limit}$
+\end_inset
+
+? For 
+\begin_inset Formula $l=0,1$
+\end_inset
+
+ it is 
+\begin_inset Formula $1$
+\end_inset
+
+,  for 
+\begin_inset Formula $l=2,3$
+\end_inset
+
+, it is 
+\begin_inset Formula $2$
+\end_inset
+
+, and for 
+\begin_inset Formula $l=4,5$
+\end_inset
+
+, it is 
+\begin_inset Formula $3$
+\end_inset
+
+.
+ This pattern continues, a fact made obvious since the first term must always
+ have 
+\begin_inset Formula $R_{a_{i}}$
+\end_inset
+
+'s only, and each subsequent term must trade a pair of 
+\begin_inset Formula $R_{a_{i}}$
+\end_inset
+
+'s for an 
+\begin_inset Formula $R^{2}\delta_{a_{i}a_{i+1}}$
+\end_inset
+
+.
+ So we conclude
+\begin_inset Formula 
+\begin{equation}
+\mathrm{upper\: limit}=\mathrm{rd}\left[\left(l+1\right)/2\right].\label{eq:24}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The pattern for the 
+\begin_inset Formula $\kappa_{m}$
+\end_inset
+
+'s is very nonobvious, so skip for now.
+ The pattern for the 
+\begin_inset Formula $\lambda_{m}$
+\end_inset
+
+'s is what I mentioned above.
+ It is clear that we can write a given 
+\begin_inset Formula $\lambda_{m}$
+\end_inset
+
+ using Euler products, and the rest is just being careful about how we write
+ all of the indices.
+ It comes to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lambda_{m}=R^{2\left(m-1\right)}\left(\prod_{\alpha=1}^{l-2\left(\alpha-1\right)}R_{a_{\alpha}}\right)\left(\prod_{\beta=0}^{m-2\geq0}\delta_{l-\beta,l-\beta+1}\right).\label{eq:25}
+\end{equation}
+
+\end_inset
+
+So,
+\begin_inset Formula 
+\begin{eqnarray}
+T^{\left(l\right)} & = & \sum_{m=1}^{\mathrm{rd}\left[\left(l+1\right)/2\right]}\kappa_{m}R^{2\left(m-1\right)}\left(\prod_{\alpha=1}^{l-2\left(m-1\right)}R_{a_{\alpha}}\right)\left(\prod_{\beta=0}^{m-2\geq0}\delta_{a_{2\beta+l-2m+3}a_{2\beta+l-2m+4}}\right)\nonumber \\
+ & = & \sum_{m=0}^{\mathrm{rd}\left(l/2\right)}\kappa_{m}R^{2m}\left(\prod_{\alpha=1}^{l-2m}R_{a_{\alpha}}\right)\left(\prod_{\beta=0}^{m-1\geq0}\delta_{a_{2\beta+l-2m+1}a_{2\beta+l-2m+2}}\right).\label{eq:26}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I'll use a different route to figure out the 
+\begin_inset Formula $\kappa_{m}$
+\end_inset
+
+'s:
+\end_layout
+
+\begin_layout Enumerate
+Write out the terms in the binomial expansion of 
+\begin_inset Formula $1/\left|\bm{R}-\bm{r}\right|$
+\end_inset
+
+ given in equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:11"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:12"
+
+\end_inset
+
+, where the analytical form of the constants in front of each term will
+ be obvious.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Figure out a general pattern for how these terms are regrouped for the multipole
+ expansion.
+\end_layout
+
+\begin_layout Enumerate
+Screw around algebraically as necessary to get the constants to appear exactly
+ as they are in the multipole expansion.
+\end_layout
+
+\begin_layout Enumerate
+Identify the resulting constants with the 
+\begin_inset Formula $\kappa_{m}$
+\end_inset
+
+'s.
+\end_layout
+
+\begin_layout Standard
+We have
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{\left|\bm{R}-\bm{r}\right|}=\sum_{k=0}{-1/2 \choose k}\left(R^{2}\right)^{-1/2-k}\left(r^{2}-2\bm{R}\cdot\bm{r}\right)^{k}.\label{eq:27}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Again using the generalized binomial theorem, this time on the 
+\begin_inset Formula $\left(r^{2}-2\bm{R}\cdot\bm{r}\right)$
+\end_inset
+
+ term,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+\frac{1}{\left|\bm{R}-\bm{r}\right|} & = & \sum_{k=0}{-1/2 \choose k}\left(R^{2}\right)^{-1/2-k}\sum_{j=0}{k \choose j}\left(r^{2}\right)^{k-j}\left(2\bm{R}\cdot\bm{r}\right)^{j}\nonumber \\
+ & = & \sum_{k=0}\sum_{j=0}^{k}2^{j}{-1/2 \choose k}{k \choose j}\frac{1}{R^{2k+1}}\left(r^{2}\right)^{k-j}\left(\bm{R}\cdot\bm{r}\right)^{j}.\label{eq:28}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We want to get this to look like the multipole expansion, in which 
+\begin_inset Formula $\bm{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bm{r}$
+\end_inset
+
+ always show up in equal powers in the numerators.
+ To do this, rewrite the above expression as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{\left|\bm{R}-\bm{r}\right|}=\sum_{k=0}\sum_{j=0}^{k}2^{j}{-1/2 \choose k}{k \choose j}\frac{1}{R^{4k-2j+1}}\left(r^{2}\right)^{k-j}\left(\bm{R}\cdot\bm{r}\right)^{j}\left(R^{2}\right)^{k-j}.\label{eq:29}
+\end{equation}
+
+\end_inset
+
+Now we group terms in the above expression as they are grouped in the multipole
+ expansion by noting that grouped terms will have like powers of 
+\begin_inset Formula $R$
+\end_inset
+
+ in the denominator.
+ Let
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mu_{k,j}\coloneqq2^{j}{-1/2 \choose k}{k \choose j}\frac{1}{R^{4k-2j+1}}\left(r^{2}\right)^{k-j}\left(\bm{R}\cdot\bm{r}\right)^{j}\left(R^{2}\right)^{k-j}.\label{eq:30}
+\end{equation}
+
+\end_inset
+
+The table below makes obvious which 
+\begin_inset Formula $\mu_{k,j}$
+\end_inset
+
+ correspond to which 
+\begin_inset Formula $R^{4k-2j+1}=R^{2l+1}$
+\end_inset
+
+ in the denominators of the multipole expansion:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="7">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{4k-2j+1}=R^{2l+1}$
+\end_inset
+
+ in denominator
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{9}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{11}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu_{k,j}$
+\end_inset
+
+ terms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu_{0,0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu_{1,1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu_{2,2}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu_{1,0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu_{3,3}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu_{2,1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu_{4,4}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu_{3,2}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu_{2,0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu_{5,5}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu_{4,3}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu_{3,1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Overall, the 
+\begin_inset Formula $\mu_{k,j}$
+\end_inset
+
+ corresponding to 
+\begin_inset Formula $R^{n}$
+\end_inset
+
+ are 
+\begin_inset Formula $\left\{ \mu_{\frac{1}{2}\left(n-1\right)-n^{\prime},\frac{1}{2}\left(n-1\right)-2n^{\prime}}\bigg|n^{\prime}\in\left\{ 0,1,\ldots,\mathrm{rd}\left[\frac{1}{4}\left(n-1\right)\right]\right\} \right\} $
+\end_inset
+
+, or equivalently, the 
+\begin_inset Formula $\mu_{k,j}$
+\end_inset
+
+ corresponding to 
+\begin_inset Formula $R^{2l+1}$
+\end_inset
+
+ are 
+\begin_inset Formula $\left\{ \mu_{l-m,l-2m}\bigg|m\in\left\{ 0,1,\ldots,\mathrm{rd}\left(l/2\right)\right\} \right\} $
+\end_inset
+
+.
+ The fact that 
+\begin_inset Formula $m$
+\end_inset
+
+ goes from 
+\begin_inset Formula $0$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathrm{rd}\left(l/2\right)$
+\end_inset
+
+ is good: Once we substitute 
+\begin_inset Formula $1/\left(\bm{R}-\bm{r}\right)$
+\end_inset
+
+ as phrased in terms of 
+\begin_inset Formula $\mu_{l-m,l-2m}$
+\end_inset
+
+'s back into the expression for 
+\begin_inset Formula $\Phi\left(\bm{R}\right)$
+\end_inset
+
+, we can identify the constants in each 
+\begin_inset Formula $\mu_{l-m,l-2m}$
+\end_inset
+
+ as being some mixture of 
+\begin_inset Formula $\kappa_{m}$
+\end_inset
+
+'s and 
+\begin_inset Formula $d^{\left(l\right)}$
+\end_inset
+
+'s, and the symbolic parts of the expression as being the 
+\begin_inset Formula $\lambda_{m}$
+\end_inset
+
+'s and 
+\begin_inset Formula $q^{\left(l\right)}$
+\end_inset
+
+'s.
+ Doing this, substituting back in for 
+\begin_inset Formula $\mu_{l-m,l-2m}$
+\end_inset
+
+, and writing the symbolic parts of the expression briefly as 
+\begin_inset Formula $\lambda_{m}$
+\end_inset
+
+'s and 
+\begin_inset Formula $q^{\left(l\right)}$
+\end_inset
+
+'s, the sum over 
+\begin_inset Formula $m$
+\end_inset
+
+ is 
+\begin_inset Formula 
+\begin{equation}
+\sum_{m=0}^{\mathrm{rd}\left(l/2\right)}k^{\left(l\right)}T^{\left(l\right)}q^{\left(l\right)}=\sum_{m=0}^{\mathrm{rd}\left(l/2\right)}2^{l-2m}{-1/2 \choose l-m}{l-m \choose l-2m}R^{2m}\left(\prod_{\alpha=1}^{l-2m}R_{a_{\alpha}}\right)\left(\prod_{\beta=0}^{m-1\geq0}\delta_{a_{2\beta+l-2m+1}a_{2\beta+l-2m+2}}\right)q^{\left(l\right)}.\label{eq:31}
+\end{equation}
+
+\end_inset
+
+Equivalently,
+\begin_inset Formula 
+\begin{equation}
+T^{\left(l\right)}=\sum_{m=0}^{\mathrm{rd}\left(l/2\right)}k_{m}^{\left(l\right)}2^{l-2m}{-1/2 \choose l-m}{l-m \choose l-2m}R^{2m}\left(\prod_{\alpha=1}^{l-2m}R_{a_{\alpha}}\right)\left(\prod_{\beta=0}^{m-1\geq0}\delta_{a_{2\beta+l-2m+1}a_{2\beta+l-2m+2}}\right),\label{eq:32}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+i.e., the expresion on the RHS is equal to 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+, except that there is still a multiplicative constant in front of each
+ term in 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+.
+ To figure out how to adjust the expression further, define
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+U^{\left(l\right)}\coloneqq\sum_{m=0}^{\mathrm{rd}\left(l/2\right)}2^{l-m}{-1/2 \choose l-m}{l-m \choose l-2m}R^{2m}\left(\prod_{\alpha=1}^{l-2m}R_{a_{\alpha}}\right)\left(\prod_{\beta=0}^{m-1\geq0}\delta_{a_{2\beta+l-2m+1}a_{2\beta+l-2m+2}}\right),\label{eq:33}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(so each term of 
+\begin_inset Formula $U^{\left(l\right)}$
+\end_inset
+
+ differs from the corresponding term in 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+ by factors of 
+\begin_inset Formula $k_{m}^{\left(l\right)}$
+\end_inset
+
+ and 
+\begin_inset Formula $2^{m}$
+\end_inset
+
+.
+ Write a table of 
+\begin_inset Formula $l$
+\end_inset
+
+, 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+, and 
+\begin_inset Formula $U^{\left(l\right)}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $l$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $U^{\left(l\right)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{a_{1}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-R_{a_{1}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3R_{a_{1}}R_{a_{2}}-R^{2}\delta_{a_{1}a_{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{3}{2}R_{a_{1}}R_{a_{2}}-R^{2}\delta_{a_{1}a_{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5R_{a_{1}}R_{a_{2}}R_{a_{3}}-3R^{2}R_{a_{1}}\delta_{a_{2}a_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{5}{2}R_{a_{1}}R_{a_{2}}R_{a_{3}}+3R^{2}R_{a_{1}}\delta_{a_{2}a_{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $35R_{a_{1}}\cdots R_{a_{4}}-30R^{2}R_{a_{1}}R_{a_{2}}\delta_{a_{3}a_{4}}+3R^{4}\delta_{a_{1}a_{2}}\delta_{a_{3}a_{4}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{35}{8}R_{a_{1}}\cdots R_{a_{4}}-\frac{30}{4}R^{2}R_{a_{1}}R_{a_{2}}\delta_{a_{3}a_{4}}+\frac{3}{2}R^{4}\delta_{a_{1}a_{2}}\delta_{a_{3}a_{4}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $63R_{a_{1}}\cdots R_{a_{5}}-70R^{2}R_{a_{1}}R_{a_{2}}R_{a_{3}}\delta_{a_{4}a_{5}}+15R^{4}R_{a_{1}}\delta_{a_{2}a_{3}}\delta_{a_{4}a_{5}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{63}{8}R_{a_{1}}\cdots R_{a_{5}}+\frac{70}{4}R^{2}R_{a_{1}}R_{a_{2}}R_{a_{3}}\delta_{a_{4}a_{5}}-\frac{15}{2}R^{4}R_{a_{1}}\delta_{a_{2}a_{3}}\delta_{a_{4}a_{5}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The tensors are exactly the same, except for the following differences:
+\end_layout
+
+\begin_layout Itemize
+The are off by a factor of 
+\begin_inset Formula $\left(-1\right)^{l}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Letting 
+\begin_inset Formula $c^{\left(l\right)}$
+\end_inset
+
+ be the leading denominator in 
+\begin_inset Formula $U^{\left(l\right)}$
+\end_inset
+
+, The 
+\begin_inset Formula $\left(l,m\right)$
+\end_inset
+
+'th terms are off by factors of 
+\begin_inset Formula $c^{\left(l\right)}/2^{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So, if we can figure out the pattern for the terms 
+\begin_inset Formula $c^{\left(l\right)}$
+\end_inset
+
+, we can write the appropriate summation to convert from 
+\begin_inset Formula $U^{\left(l\right)}$
+\end_inset
+
+ to 
+\begin_inset Formula $T^{\left(l\right)}$
+\end_inset
+
+, and we are done.
+ 
+\begin_inset Formula $c^{\left(l\right)}$
+\end_inset
+
+ is just the denominator in the 
+\begin_inset Formula $m=0$
+\end_inset
+
+ constant in 
+\begin_inset Formula $U^{\left(l\right)}$
+\end_inset
+
+, i.e.,
+\begin_inset Formula 
+\begin{eqnarray}
+c^{\left(l\right)} & = & \mathrm{denominator}\left(2^{l-m}{-1/2 \choose l-m}{l-m \choose l-2m}\bigg|_{m=0}\right)\nonumber \\
+ & = & \mathrm{denominator}\left(2^{l}{-1/2 \choose l}{l \choose l}\right)\nonumber \\
+ & = & \mathrm{denominator}\left(2^{l}{-1/2 \choose l}\right)\nonumber \\
+ & = & d^{\left(l\right)},\label{eq:34}
+\end{eqnarray}
+
+\end_inset
+
+by equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:22"
+
+\end_inset
+
+.
+ So, we have effectively determined that
+\begin_inset Formula 
+\begin{eqnarray}
+k_{m}^{\left(l\right)} & = & \left(-1\right)^{l}2^{m}\frac{d^{\left(l\right)}}{2^{m}}\nonumber \\
+ & = & \left(-1\right)^{l}d^{\left(l\right)}.\label{eq:35}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From this and equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:26"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:32"
+
+\end_inset
+
+, this is equivalent to saying that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\kappa_{m}=\left(-1\right)^{l}d^{\left(l\right)}2^{l-2m}{-1/2 \choose l-m}{l-m \choose l-2m}.\label{eq:36}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituting back into equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:26"
+
+\end_inset
+
+ or 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:32"
+
+\end_inset
+
+, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T^{\left(l\right)}=\left(-1\right)^{l}\sum_{m=0}^{\mathrm{rd}\left(l/2\right)}d^{\left(l\right)}2^{l-2m}{-1/2 \choose l-m}{l-m \choose l-2m}R^{2m}\left(\prod_{\alpha=1}^{l-2m}R_{a_{\alpha}}\right)\left(\prod_{\beta=0}^{m-1\geq0}\delta_{a_{2\beta+l-2m+1}a_{2\beta+l-2m+2}}\right).\label{eq:37}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The results of the above derivation are summarized by equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2"
+
+\end_inset
+
+ through 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:9"
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
